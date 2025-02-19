@@ -1,6 +1,8 @@
 class Customer < ApplicationRecord
   has_one_attached :image
 
+  validates :full_name, :phone_number, presence: true
+
   def self.ransackable_associations(auth_object = nil)
     [ "image_attachment", "image_blob" ]
   end
