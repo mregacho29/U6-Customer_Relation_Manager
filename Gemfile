@@ -41,6 +41,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'activeadmin'
+gem 'devise'
 
 
 group :development, :test do
