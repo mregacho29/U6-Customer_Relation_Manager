@@ -43,6 +43,7 @@ gem "thruster", require: false
 gem 'activeadmin'
 gem 'devise'
 gem 'sassc-rails'
+gem 'image_processing'
 
 
 group :development, :test do
