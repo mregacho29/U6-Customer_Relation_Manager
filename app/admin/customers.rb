@@ -1,5 +1,5 @@
 ActiveAdmin.register Customer do
-  permit_params :full_name, :phone_number, :email_address, :notes
+  permit_params :full_name, :phone_number, :email_address, :notes, :image
 
   index do
     selectable_column
@@ -8,6 +8,11 @@ ActiveAdmin.register Customer do
     column :phone_number
     column :email_address
     column :notes
+    column :image do |customer|
+      if customer.image.attached?
+        image_tag url_for(customer.image), size: "50x50"
+      end
+    end
     actions
   end
 
@@ -17,6 +22,7 @@ ActiveAdmin.register Customer do
       f.input :phone_number
       f.input :email_address
       f.input :notes
+      f.input :image, as: :file
     end
     f.actions
   end
@@ -27,6 +33,11 @@ ActiveAdmin.register Customer do
       row :phone_number
       row :email_address
       row :notes
+      row :image do |customer|
+        if customer.image.attached?
+          image_tag url_for(customer.image)
+        end
+      end
     end
     active_admin_comments
   end
