@@ -42,6 +42,7 @@ gem "thruster", require: false
 
 gem 'activeadmin'
 gem 'devise'
+gem 'sassc-rails'
 
 
 group :development, :test do
