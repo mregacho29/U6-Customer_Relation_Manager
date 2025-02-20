@@ -1,8 +1,13 @@
-<h2 class="title has-text-centered mt-5">Missing Email Customers</h2>
+<h2 class="title has-text-centered mt-5">Customers Missing Email</h2>
 
-<div class="columns is-multiline">
+<div class="buttons is-centered">
+  <%= link_to 'All Customers', root_path, class: 'button is-link' %>
+  <%= link_to 'Alphabetized Customers', alphabetized_customers_path, class: 'button is-link' %>
+</div>
+
+<div class="columns is-multiline ml-2 mr-2">
   <% @customers.each do |customer| %>
-    <div class="column is-3">
+    <div class="column is-4">
       <%= render partial: "customers/customer", locals: { customer: customer } %>
     </div>
   <% end %>

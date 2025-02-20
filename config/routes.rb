@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  get "customers/index"
-  get "customers/alphabetized"
-  get "customers/missing_email"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :customers, only: [ :index ]
+  resources :customers, only: [ :index ] do
+    collection do
+      get "alphabetized"
+      get "missing_email"
+    end
+  end
+
   root to: "customers#index"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

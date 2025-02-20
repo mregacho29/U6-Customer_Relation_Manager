@@ -1,5 +1,10 @@
 <h2 class="title has-text-centered mt-5">Customers</h2>
 
+<div class="buttons is-centered">
+  <%= link_to 'Alphabetized Customers', alphabetized_customers_path, class: 'button is-link' %>
+  <%= link_to 'Customers Missing Email', missing_email_customers_path, class: 'button is-link' %>
+</div>
+
 <div class="columns is-multiline ml-2 mr-2">
   <% @customers.each do |customer| %>
     <div class="column is-4">
