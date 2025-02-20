@@ -1,0 +1,17 @@
+<div class="box">
+  <div class="media">
+    <div class="media-left">
+      <% if customer.image.attached? %>
+        <%= image_tag url_for(customer.image), size: "64x64", class: "image is-64x64" %>
+      <% else %>
+        <%= image_tag "placeholder.png", size: "64x64", class: "image is-64x64" %>
+      <% end %>
+    </div>
+    <div class="media-content">
+      <p class="title is-4"><%= customer.full_name %></p>
+      <p class="subtitle is-6"><%= customer.email_address.presence || "No email provided" %></p>
+      <p class="subtitle is-6"><%= customer.phone_number %></p>
+      <p class="subtitle is-6"><%= customer.notes %></p>
+    </div>
+  </div>
+</div>
