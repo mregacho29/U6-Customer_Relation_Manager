@@ -1,0 +1,9 @@
+<h2 class="title has-text-centered mt-5">Alphabetized Customers</h2>
+
+<div class="columns is-multiline">
+  <% @customers.each do |customer| %>
+    <div class="column is-3">
+      <%= render partial: "customers/customer", locals: { customer: customer } %>
+    </div>
+  <% end %>
+</div>
